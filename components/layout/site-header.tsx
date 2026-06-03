@@ -1,11 +1,12 @@
 import { navItems, siteConfig, siteCopy } from "@/lib/site";
 import { Container } from "@/components/shared/container";
+import { MobileMenu } from "@/components/layout/mobile-menu";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur">
-      <Container className="flex flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between">
+      <Container className="flex items-center justify-between gap-4 py-4">
         <a
           href="#top"
           className="font-mono text-sm font-bold text-primary md:text-base"
@@ -16,7 +17,7 @@ export function SiteHeader() {
 
         <nav
           aria-label={siteCopy.header.navLabel}
-          className="flex gap-4 overflow-x-auto pb-1 text-sm md:gap-8 md:overflow-visible md:pb-0"
+          className="hidden gap-4 overflow-x-auto pb-1 text-sm md:flex md:gap-8 md:overflow-visible md:pb-0"
         >
           {navItems.map((item) => (
             <a
@@ -29,7 +30,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center justify-between gap-4 md:justify-end">
+        <div className="hidden items-center justify-between gap-4 md:flex md:justify-end">
           <span className="font-mono text-xs font-medium text-muted-foreground">
             {siteCopy.header.language}
           </span>
@@ -38,6 +39,17 @@ export function SiteHeader() {
             label={siteCopy.header.themeLabel}
           />
         </div>
+
+        <MobileMenu
+          closeMenuLabel={siteCopy.header.closeMenuLabel}
+          language={siteCopy.header.language}
+          links={navItems}
+          menuAriaLabel={siteCopy.header.menuAriaLabel}
+          menuLabel={siteCopy.header.menuLabel}
+          navLabel={siteCopy.header.navLabel}
+          themeAriaLabel={siteCopy.header.themeAriaLabel}
+          themeLabel={siteCopy.header.themeLabel}
+        />
       </Container>
     </header>
   );

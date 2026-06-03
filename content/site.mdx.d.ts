@@ -19,6 +19,9 @@ declare module "@/content/site.mdx" {
   export const siteCopy: {
     readonly header: {
       readonly navLabel: string;
+      readonly menuLabel: string;
+      readonly menuAriaLabel: string;
+      readonly closeMenuLabel: string;
       readonly language: string;
       readonly themeLabel: string;
       readonly themeAriaLabel: string;
