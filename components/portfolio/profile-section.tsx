@@ -31,8 +31,8 @@ function CodeWindow() {
         </h2>
         <TerminalDots />
       </div>
-      <div className="overflow-x-auto p-6">
-        <pre className="font-mono text-sm leading-6 text-foreground">
+      <div className="p-6">
+        <pre className="whitespace-pre-wrap break-words font-mono text-sm leading-6 text-foreground">
           <span className="text-code-comment">
             {siteCopy.profile.codeComment}
           </span>
