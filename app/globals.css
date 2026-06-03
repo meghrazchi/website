@@ -96,6 +96,10 @@ body {
   outline: 2px solid var(--primary);
 }
 
+[id] {
+  scroll-margin-top: 112px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

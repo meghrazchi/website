@@ -7,7 +7,7 @@ export function HighlightsSection() {
         id="projects-title"
         className="font-display text-3xl font-semibold text-foreground"
       >
-        System_Highlights_01
+        Open_Source_Projects_01
       </h2>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -59,6 +59,17 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
+
+        {"repositoryUrl" in project ? (
+          <a
+            href={project.repositoryUrl}
+            className="mt-6 inline-flex min-h-10 items-center justify-center rounded border border-border bg-surface-lowest px-4 py-2 font-mono text-sm font-semibold text-foreground transition-colors hover:bg-surface-high"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View repository
+          </a>
+        ) : null}
       </div>
 
       {project.featured ? (

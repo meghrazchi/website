@@ -69,7 +69,7 @@ export function HeroSection() {
           <div className="absolute inset-x-6 bottom-0 z-10 translate-y-1/2 rounded border border-border bg-surface/90 p-4 shadow-sm backdrop-blur">
             <div className="mb-2 flex items-center justify-between gap-3">
               <span className="font-mono text-xs font-semibold text-primary">
-                process_identity.exe
+                process_identity.sh
               </span>
               <TerminalDots />
             </div>
