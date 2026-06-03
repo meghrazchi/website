@@ -60,3 +60,7 @@ docker compose down
 ## Deployment
 
 The Docker image builds the static Next.js export in a Node 22 Alpine stage and serves the generated `out/` directory with Nginx. This is suitable for a VPS behind Caddy or Nginx.
+
+## License
+
+This project is released under the MIT License. You can use, copy, modify, and redistribute it for personal or commercial projects. See `LICENSE` for the full terms.
