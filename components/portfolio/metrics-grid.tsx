@@ -1,10 +1,10 @@
-import { metrics } from "@/lib/site";
+import { metrics, siteCopy } from "@/lib/site";
 
 export function MetricsGrid() {
   return (
     <section
       className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
-      aria-label="Engineering metrics"
+      aria-label={siteCopy.metrics.ariaLabel}
     >
       {metrics.map((metric) => (
         <article

@@ -1,4 +1,4 @@
-import { techStack } from "@/lib/site";
+import { siteCopy, techStack } from "@/lib/site";
 
 export function SkillsSection() {
   return (
@@ -12,10 +12,10 @@ export function SkillsSection() {
           id="stack-title"
           className="font-display text-3xl font-semibold text-foreground"
         >
-          Tech_Stack_V2
+          {siteCopy.skills.title}
         </h2>
         <p className="font-mono text-sm font-medium text-primary">
-          {'grep -r "senior" ./skills'}
+          {siteCopy.skills.command}
         </p>
       </div>
 

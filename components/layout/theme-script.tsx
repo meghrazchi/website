@@ -1,11 +1,8 @@
-import Script from "next/script";
-
 const themeScript = `
 (function () {
   try {
     var storedTheme = window.localStorage.getItem("portfolio-theme");
-    var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    var shouldUseDark = storedTheme === "dark" || (!storedTheme && prefersDark);
+    var shouldUseDark = storedTheme !== "light";
     document.documentElement.classList.toggle("dark", shouldUseDark);
   } catch (_) {}
 })();
@@ -13,9 +10,8 @@ const themeScript = `
 
 export function ThemeScript() {
   return (
-    <Script
+    <script
       id="portfolio-theme"
-      strategy="afterInteractive"
       dangerouslySetInnerHTML={{ __html: themeScript }}
     />
   );

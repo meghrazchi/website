@@ -1,4 +1,4 @@
-import { highlights } from "@/lib/site";
+import { highlights, siteCopy } from "@/lib/site";
 
 export function HighlightsSection() {
   return (
@@ -7,7 +7,7 @@ export function HighlightsSection() {
         id="projects-title"
         className="font-display text-3xl font-semibold text-foreground"
       >
-        Open_Source_Projects_01
+        {siteCopy.projects.title}
       </h2>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -67,7 +67,7 @@ function ProjectCard({ project }: { project: Project }) {
             target="_blank"
             rel="noreferrer"
           >
-            View repository
+            {siteCopy.projects.repositoryLabel}
           </a>
         ) : null}
       </div>
@@ -77,7 +77,7 @@ function ProjectCard({ project }: { project: Project }) {
           aria-hidden="true"
           className="absolute -bottom-8 -right-4 font-mono text-8xl font-bold text-primary opacity-[0.04] transition-opacity group-hover:opacity-10"
         >
-          API
+          {siteCopy.projects.featuredWatermark}
         </div>
       ) : null}
     </article>
