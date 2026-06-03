@@ -1,11 +1,11 @@
 import Image from "next/image";
-import { siteConfig } from "@/lib/site";
 import { TerminalDots } from "@/components/shared/terminal-dots";
+import { HeroContent, siteConfig, siteCopy } from "@/lib/site";
 
 const identityRows = [
   { key: "name", value: siteConfig.name },
   { key: "role", value: siteConfig.role },
-  { key: "status", value: "Open for innovation" },
+  { key: "status", value: siteCopy.hero.identityStatus },
 ] as const;
 
 export function HeroSection() {
@@ -19,37 +19,26 @@ export function HeroSection() {
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-high px-3 py-1">
           <span className="size-2 rounded-full bg-method-get motion-safe:animate-pulse" />
           <span className="font-mono text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            System Active: {siteConfig.location}
+            {siteCopy.hero.systemStatusPrefix} {siteConfig.location}
           </span>
         </div>
 
         <div className="space-y-4">
-          <h1
-            id="hero-title"
-            className="max-w-3xl font-display text-4xl font-semibold leading-tight text-foreground sm:text-5xl"
-          >
-            Senior Backend Engineer Architecting{" "}
-            <span className="text-primary">Scalable Distributed Systems</span>.
-          </h1>
-          <p className="max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
-            Specializing in high-performance microservices, cloud
-            infrastructure, and turning complex technical requirements into
-            elegant, maintainable codebases.
-          </p>
+          <HeroContent />
         </div>
 
         <div className="flex flex-col gap-3 pt-2 sm:flex-row">
           <a
-            href="#projects"
+            href={siteCopy.hero.primaryCta.href}
             className="inline-flex min-h-12 items-center justify-center rounded bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-sm transition-opacity hover:opacity-90"
           >
-            View Project Repository
+            {siteCopy.hero.primaryCta.label}
           </a>
           <a
-            href="#experience"
+            href={siteCopy.hero.secondaryCta.href}
             className="inline-flex min-h-12 items-center justify-center rounded border border-border px-6 py-3 font-mono text-sm font-semibold text-foreground transition-colors hover:bg-surface-high"
           >
-            GET /resume.pdf
+            {siteCopy.hero.secondaryCta.label}
           </a>
         </div>
       </div>
@@ -69,7 +58,7 @@ export function HeroSection() {
           <div className="absolute inset-x-6 bottom-0 z-10 translate-y-1/2 rounded border border-border bg-surface/90 p-4 shadow-sm backdrop-blur">
             <div className="mb-2 flex items-center justify-between gap-3">
               <span className="font-mono text-xs font-semibold text-primary">
-                process_identity.sh
+                {siteCopy.hero.processFile}
               </span>
               <TerminalDots />
             </div>

@@ -7,7 +7,7 @@ import { MetricsGrid } from "@/components/portfolio/metrics-grid";
 import { ProfileSection } from "@/components/portfolio/profile-section";
 import { SkillsSection } from "@/components/portfolio/skills-section";
 import { TimelineSection } from "@/components/portfolio/timeline-section";
-import { siteConfig } from "@/lib/site";
+import { siteConfig, siteCopy } from "@/lib/site";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -23,16 +23,10 @@ const jsonLd = {
     image: siteConfig.image,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Munich",
-      addressCountry: "DE",
+      addressLocality: siteCopy.structuredData.addressLocality,
+      addressCountry: siteCopy.structuredData.addressCountry,
     },
-    knowsAbout: [
-      "Distributed systems",
-      "Backend engineering",
-      "Cloud architecture",
-      "Microservices",
-      "Observability",
-    ],
+    knowsAbout: siteCopy.structuredData.knowsAbout,
   },
 };
 

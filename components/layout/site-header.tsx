@@ -1,4 +1,4 @@
-import { navItems, siteConfig } from "@/lib/site";
+import { navItems, siteConfig, siteCopy } from "@/lib/site";
 import { Container } from "@/components/shared/container";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 
@@ -15,7 +15,7 @@ export function SiteHeader() {
         </a>
 
         <nav
-          aria-label="Primary navigation"
+          aria-label={siteCopy.header.navLabel}
           className="flex gap-4 overflow-x-auto pb-1 text-sm md:gap-8 md:overflow-visible md:pb-0"
         >
           {navItems.map((item) => (
@@ -31,9 +31,12 @@ export function SiteHeader() {
 
         <div className="flex items-center justify-between gap-4 md:justify-end">
           <span className="font-mono text-xs font-medium text-muted-foreground">
-            Language: EN/DE
+            {siteCopy.header.language}
           </span>
-          <ThemeToggle />
+          <ThemeToggle
+            ariaLabel={siteCopy.header.themeAriaLabel}
+            label={siteCopy.header.themeLabel}
+          />
         </div>
       </Container>
     </header>

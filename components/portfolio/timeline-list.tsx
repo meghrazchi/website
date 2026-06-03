@@ -8,9 +8,14 @@ type TimelineItem = (typeof timeline)[number];
 type TimelineListProps = {
   items: readonly TimelineItem[];
   initialCount?: number;
+  loadMoreLabel: string;
 };
 
-export function TimelineList({ items, initialCount = 3 }: TimelineListProps) {
+export function TimelineList({
+  items,
+  initialCount = 3,
+  loadMoreLabel,
+}: TimelineListProps) {
   const [visibleCount, setVisibleCount] = useState(initialCount);
   const visibleItems = items.slice(0, visibleCount);
   const hiddenCount = Math.max(items.length - visibleCount, 0);
@@ -37,7 +42,7 @@ export function TimelineList({ items, initialCount = 3 }: TimelineListProps) {
             onClick={showMore}
             className="inline-flex min-h-11 items-center justify-center rounded border border-border bg-surface-lowest px-4 py-2 font-mono text-sm font-semibold text-foreground transition-colors hover:bg-surface-high"
           >
-            Load more roles ({hiddenCount})
+            {loadMoreLabel} ({hiddenCount})
           </button>
         </div>
       ) : null}

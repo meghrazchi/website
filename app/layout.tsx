@@ -49,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="h-full scroll-smooth antialiased"
+      className="dark h-full scroll-smooth antialiased"
       suppressHydrationWarning
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">

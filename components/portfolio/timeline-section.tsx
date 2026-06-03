@@ -1,4 +1,4 @@
-import { timeline } from "@/lib/site";
+import { siteCopy, timeline } from "@/lib/site";
 import { TimelineList } from "@/components/portfolio/timeline-list";
 
 export function TimelineSection() {
@@ -12,10 +12,14 @@ export function TimelineSection() {
         id="experience-title"
         className="text-center font-display text-[40px] font-semibold leading-[48px] text-foreground md:text-[56px] md:leading-[64px]"
       >
-        Experiences
+        {siteCopy.timeline.title}
       </h2>
 
-      <TimelineList items={timeline} initialCount={3} />
+      <TimelineList
+        items={timeline}
+        initialCount={3}
+        loadMoreLabel={siteCopy.timeline.loadMoreLabel}
+      />
     </section>
   );
 }

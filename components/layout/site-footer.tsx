@@ -1,5 +1,5 @@
 import { Container } from "@/components/shared/container";
-import { footerLinks, siteConfig } from "@/lib/site";
+import { footerLinks, siteConfig, siteCopy } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -9,7 +9,7 @@ export function SiteFooter() {
     >
       <Container className="flex flex-col gap-6 py-8 md:flex-row md:items-center md:justify-between">
         <div className="font-mono text-xs font-medium text-foreground">
-          © 2026 TERMINAL_ENGINEER // {siteConfig.name}
+          {siteCopy.footer.copyrightPrefix} {siteConfig.name}
         </div>
 
         <div className="flex flex-wrap gap-6">
@@ -17,7 +17,7 @@ export function SiteFooter() {
             href={`mailto:${siteConfig.email}`}
             className="font-mono text-xs font-bold uppercase text-muted-foreground underline underline-offset-4 transition-colors hover:text-primary"
           >
-            Email
+            {siteCopy.footer.emailLabel}
           </a>
           {footerLinks.map((link) => (
             <a

@@ -1,4 +1,4 @@
-import { profileCode, statusItems } from "@/lib/site";
+import { profileCode, siteCopy, statusItems } from "@/lib/site";
 import { TerminalDots } from "@/components/shared/terminal-dots";
 
 export function ProfileSection() {
@@ -27,14 +27,14 @@ function CodeWindow() {
           id="about-title"
           className="font-mono text-xs font-medium text-muted-foreground"
         >
-          ~/profile/identity.json
+          {siteCopy.profile.windowTitle}
         </h2>
         <TerminalDots />
       </div>
       <div className="overflow-x-auto p-6">
         <pre className="font-mono text-sm leading-6 text-foreground">
           <span className="text-code-comment">
-            {"// Core profile data structure"}
+            {siteCopy.profile.codeComment}
           </span>
           {"\n"}
           {"{\n"}
@@ -56,11 +56,10 @@ function PhilosophyPanel() {
   return (
     <article className="flex-1 rounded border border-primary bg-primary-soft p-6">
       <h3 className="mb-2 font-display text-3xl font-semibold text-primary-soft-foreground">
-        Core Philosophy
+        {siteCopy.profile.philosophyTitle}
       </h3>
       <p className="leading-7 text-primary-soft-foreground/80">
-        Complexity is the enemy of reliability. I design systems that remain
-        transparent and manageable at scale.
+        {siteCopy.profile.philosophyText}
       </p>
     </article>
   );
@@ -70,7 +69,7 @@ function StatusPanel() {
   return (
     <article className="rounded border border-border bg-surface-high p-6">
       <h3 className="mb-4 font-mono text-xs font-bold uppercase text-muted-foreground">
-        CURRENT_STATUS
+        {siteCopy.profile.statusTitle}
       </h3>
       <ul className="space-y-3">
         {statusItems.map((item) => (
