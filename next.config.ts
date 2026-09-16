@@ -6,13 +6,6 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "www.gravatar.com",
-        pathname: "/avatar/**",
-      },
-    ],
   },
 };
 
