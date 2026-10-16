@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { highlights, siteCopy } from "@/lib/site";
 
 export function HighlightsSection() {
@@ -22,6 +23,7 @@ export function HighlightsSection() {
 type Project = (typeof highlights)[number];
 
 function ProjectCard({ project }: { project: Project }) {
+  const hasDetailPage = project.title === "Rudix";
   return (
     <article
       className={`group relative overflow-hidden rounded-lg border border-border bg-surface-lowest p-8 transition-colors hover:border-primary ${
@@ -60,16 +62,26 @@ function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
 
-        {"repositoryUrl" in project ? (
-          <a
-            href={project.repositoryUrl}
-            className="mt-6 inline-flex min-h-10 items-center justify-center rounded border border-border bg-surface-lowest px-4 py-2 font-mono text-sm font-semibold text-foreground transition-colors hover:bg-surface-high"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {siteCopy.projects.repositoryLabel}
-          </a>
-        ) : null}
+        <div className="mt-6 flex flex-wrap gap-3">
+          {hasDetailPage ? (
+            <Link
+              href="/projects/rudix"
+              className="inline-flex min-h-10 items-center justify-center rounded bg-primary px-4 py-2 font-mono text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              View case study
+            </Link>
+          ) : null}
+          {"repositoryUrl" in project ? (
+            <a
+              href={project.repositoryUrl}
+              className="inline-flex min-h-10 items-center justify-center rounded border border-border bg-surface-lowest px-4 py-2 font-mono text-sm font-semibold text-foreground transition-colors hover:bg-surface-high"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {siteCopy.projects.repositoryLabel}
+            </a>
+          ) : null}
+        </div>
       </div>
 
       {project.featured ? (

@@ -10,6 +10,18 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  keywords: [
+    "Senior Backend Engineer",
+    "AI Platform Engineer",
+    "Distributed Systems Munich",
+    "Cloud-native architecture",
+    "RAG",
+    "Agentic AI",
+    "LLM applications",
+    "Microservices",
+    "Kubernetes",
+    "Behzad Meghrazchi",
+  ],
   alternates: {
     canonical: "/",
   },

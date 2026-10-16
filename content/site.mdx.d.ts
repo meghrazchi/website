@@ -51,8 +51,14 @@ declare module "@/content/site.mdx" {
       readonly windowTitle: string;
       readonly codeComment: string;
       readonly philosophyTitle: string;
+      readonly philosophyTagline: string;
       readonly philosophyText: string;
       readonly statusTitle: string;
+      readonly statusLiveFeedLabel: string;
+      readonly terminalBar: {
+        readonly filter: string;
+        readonly file: string;
+      };
     };
     readonly skills: {
       readonly title: string;
@@ -81,6 +87,7 @@ declare module "@/content/site.mdx" {
   export const metrics: readonly {
     readonly label: string;
     readonly value: string;
+    readonly headline: string;
     readonly detail: string;
     readonly tone: MetricTone;
   }[];
@@ -88,14 +95,33 @@ declare module "@/content/site.mdx" {
   export const profileCode: {
     readonly identity: {
       readonly full_name: string;
+      readonly title: string;
       readonly expertise: readonly string[];
       readonly mission: string;
     };
     readonly bio: string;
     readonly stack_philosophy: string;
+    readonly core_tech_stack: {
+      readonly languages: readonly string[];
+      readonly infrastructure: readonly string[];
+      readonly data_stores: readonly string[];
+    };
+    readonly impact_metrics: {
+      readonly p99_latency_reduction: string;
+      readonly peak_throughput: string;
+      readonly service_availability: string;
+    };
+    readonly endpoints: {
+      readonly github: string;
+      readonly linkedin: string;
+      readonly status_feed: string;
+    };
   };
 
-  export const statusItems: readonly string[];
+  export const statusItems: readonly {
+    readonly label: string;
+    readonly description: string;
+  }[];
 
   export const highlights: readonly {
     readonly method: HttpMethod;
@@ -124,6 +150,19 @@ declare module "@/content/site.mdx" {
   export const footerLinks: readonly {
     readonly label: string;
     readonly href: string;
+  }[];
+
+  export const seoPages: readonly {
+    readonly path: string;
+    readonly metadataTitle: string;
+    readonly metaDescription: string;
+    readonly heading: string;
+    readonly intro: string;
+    readonly sections: readonly {
+      readonly heading: string;
+      readonly body: string;
+      readonly bullets?: readonly string[];
+    }[];
   }[];
 
   export const heroContent: {

@@ -19,8 +19,13 @@ const jsonLd = {
     "@type": "Person",
     name: siteConfig.name,
     jobTitle: siteConfig.title,
-    email: `mailto:${siteConfig.email}`,
-    image: siteConfig.image,
+    url: siteConfig.url,
+    image: `${siteConfig.url}${siteConfig.image}`,
+    email: siteConfig.email,
+    sameAs: [
+      "https://www.linkedin.com/in/behzad-meghrazchi/",
+      "https://github.com/meghrazchi",
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: siteCopy.structuredData.addressLocality,

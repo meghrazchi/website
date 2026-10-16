@@ -63,6 +63,10 @@
   --color-method-get: var(--method-get);
   --color-method-post: var(--method-post);
   --color-metric-positive: var(--metric-positive);
+  --color-json-key: #93c5fd;
+  --color-json-string: #cbd5e1;
+  --color-json-value-highlight: #86efac;
+  --color-json-punct: #64748b;
   --font-sans: Arial, Helvetica, sans-serif;
   --font-display: Arial, Helvetica, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -98,6 +102,36 @@ body {
 
 [id] {
   scroll-margin-top: 112px;
+}
+
+.text-json-key {
+  color: var(--color-json-key);
+}
+
+.text-json-string {
+  color: var(--color-json-string);
+}
+
+.text-json-value-highlight {
+  color: var(--color-json-value-highlight);
+}
+
+.text-json-punct {
+  color: var(--color-json-punct);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0d121c;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #243048;
+  border-radius: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {

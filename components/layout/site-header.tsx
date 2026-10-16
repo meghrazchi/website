@@ -8,7 +8,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur">
       <Container className="flex items-center justify-between gap-4 py-4">
         <a
-          href="#top"
+          href="/"
           className="font-mono text-sm font-bold text-primary md:text-base"
           aria-label={`${siteConfig.name} homepage`}
         >

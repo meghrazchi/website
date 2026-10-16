@@ -7,6 +7,7 @@ export {
   metrics,
   navItems,
   profileCode,
+  seoPages,
   siteConfig,
   siteCopy,
   statusItems,

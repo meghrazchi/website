@@ -1,13 +1,12 @@
 export const siteConfig = {
   name: "Behzad Meghrazchi",
-  title:
-    "Senior Tech Lead | Backend & Cloud Architect | AWS • LLM Integration • RAG • Agentic AI",
-  role: "Principal Backend Architect",
+  title: "Senior Backend Engineer & AI Platform Engineer",
+  role: "Senior Backend Engineer & AI Platform Engineer",
   systemName: "SYS_PORTFOLIO_V2",
   location: "Munich, DE",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://behzadmeghrazchi.com",
   description:
-    "Personal portfolio for Behzad Meghrazchi, a senior backend engineer focused on scalable distributed systems, cloud infrastructure, and resilient software architecture and AI driven Plarforms.",
+    "Senior Backend Engineer & AI Platform Engineer specializing in distributed systems, cloud-native architecture, scalable backend platforms, retrieval-augmented generation (RAG), and agentic AI.",
   email: "behzad.meghrazchi@gmail.com",
   image: "/behzad-meghrazchi.webp",
 };
@@ -28,11 +27,11 @@ export const siteCopy = {
     identityStatus: "Open for innovation",
     primaryCta: {
       label: "View Project Repository",
-      href: "#projects",
+      href: "/#projects",
     },
     secondaryCta: {
       label: "GET /resume.pdf",
-      href: "#experience",
+      href: "/#experience",
     },
   },
   metrics: {
@@ -45,11 +44,18 @@ export const siteCopy = {
   },
   profile: {
     windowTitle: "~/profile/identity.json",
-    codeComment: "// Core profile data structure",
+    codeComment: "",
     philosophyTitle: "Core Philosophy",
+    philosophyTagline:
+      "Build for reliability. Engineer for scale. Adopt AI with purpose.",
     philosophyText:
-      "Complexity is the enemy of reliability. I design systems that remain transparent and manageable at scale.",
+      "Complexity is the enemy of reliability. I design scalable backend architectures and distributed systems that remain observable, secure, maintainable, and predictable under production workloads. My approach combines proven software engineering principles with cloud-native architecture, event-driven design, and carefully evaluated AI capabilities to solve real-world engineering challenges.",
     statusTitle: "CURRENT_STATUS",
+    statusLiveFeedLabel: "LIVE FEED",
+    terminalBar: {
+      filter: "'.impact_metrics'",
+      file: "~/profile/identity.json",
+    },
   },
   skills: {
     title: "Tech_Stack_V2",
@@ -67,46 +73,54 @@ export const siteCopy = {
     addressLocality: "Munich",
     addressCountry: "DE",
     knowsAbout: [
-      "Distributed systems",
       "Backend engineering",
-      "Cloud architecture",
+      "Distributed systems architecture",
+      "Cloud-native engineering",
       "Microservices",
-      "Observability",
+      "AI engineering",
+      "Large language models",
+      "Retrieval-augmented generation",
+      "Agentic AI systems",
+      "Technical leadership",
     ],
   },
 };
 
 export const navItems = [
-  { label: "GET /about-me", href: "#about" },
-  { label: "GET /projects", href: "#projects" },
-  { label: "GET /stack", href: "#stack" },
-  { label: "GET /experiences", href: "#experience" },
-  { label: "POST /contact", href: "#contact" },
+  { label: "GET /about-me", href: "/#about" },
+  { label: "GET /projects", href: "/#projects" },
+  { label: "GET /stack", href: "/#stack" },
+  { label: "GET /experiences", href: "/#experience" },
+  { label: "POST /contact", href: "/#contact" },
 ];
 
 export const metrics = [
   {
-    label: "TOTAL_UPTIME",
-    value: "99.98%",
-    detail: "+0.02% current quarter",
-    tone: "positive",
-  },
-  {
-    label: "CODE_SHIPPED",
-    value: "142k+",
-    detail: "LOC production grade",
+    label: "SYSTEM_SCALE",
+    value: "2M+",
+    headline: "Users Supported",
+    detail: "Scalable backend systems",
     tone: "neutral",
   },
   {
-    label: "API_LATENCY",
-    value: "42ms",
-    detail: "-5ms optimized path",
+    label: "PERFORMANCE",
+    value: "40%",
+    headline: "Latency Reduction",
+    detail: "Backend optimization",
     tone: "positive",
   },
   {
-    label: "PROJECTS_DEPLOYED",
-    value: "24",
-    detail: "Global scale systems",
+    label: "DATA_THROUGHPUT",
+    value: "10K+/day",
+    headline: "Reports Processed",
+    detail: "Automated workflows",
+    tone: "neutral",
+  },
+  {
+    label: "AI_ENGINEERING",
+    value: "Production AI",
+    headline: "LLM & RAG Systems",
+    detail: "Enterprise AI applications",
     tone: "neutral",
   },
 ];
@@ -114,19 +128,51 @@ export const metrics = [
 export const profileCode = {
   identity: {
     full_name: siteConfig.name,
-    expertise: ["Distributed Systems", "Cloud Architecture"],
-    mission: "Building resilient digital backbones",
+    title: "Senior Backend & AI Platform Engineer",
+    expertise: [
+      "Senior Backend Engineering",
+      "Distributed Systems Architecture",
+      "Cloud-Native Engineering",
+      "AI Platform Engineering · RAG & Agentic AI",
+      "Technical Leadership",
+    ],
+    mission:
+      "Designing distributed, cloud-native backend platforms and production AI systems - including RAG and agentic workflows - that are reliable, observable, and operable.",
   },
-  bio:
-    "Senior engineer with a decade of experience optimizing heavy-load environments. I favor boring technology for mission-critical systems and careful experimentation where it creates durable advantage.",
-  stack_philosophy:
-    "Type safety, modularity, automated observability, and operational clarity.",
+  bio: "Senior Backend & AI Platform Engineer with 10+ years of experience building distributed systems, microservices, high-performance APIs, and cloud-native platforms. Focused on reliability, security, and observability, and on production AI: LLM integration, retrieval-augmented generation (RAG), and agentic AI workflows that deliver measurable business value.",
+  impact_metrics: {
+    p99_latency_reduction: "45%",
+    peak_throughput: "120k+ RPS",
+    service_availability: "99.995%",
+  },
 };
 
 export const statusItems = [
-  "Refactoring legacy monoliths",
-  "Cloud-native optimization",
-  "Event-driven service design",
+  {
+    label: "Distributed Systems & Backend Architecture",
+    description:
+      "Modernizing legacy monoliths, designing modular services, and evolving scalable, event-driven microservice architectures.",
+  },
+  {
+    label: "Cloud-Native Engineering",
+    description:
+      "Operating cloud infrastructure, APIs, deployment pipelines, and production performance on Kubernetes, AWS/GCP, and Terraform.",
+  },
+  {
+    label: "Agentic AI & Automation",
+    description:
+      "Designing agentic AI workflows and MCP-based tool use with explicit guardrails, evaluation loops, and auditable operations.",
+  },
+  {
+    label: "Production AI Engineering",
+    description:
+      "Engineering LLM integration and RAG pipelines - ingestion, chunking, embeddings, retrieval, and citation-grounded responses - as production software.",
+  },
+  {
+    label: "Technical Leadership",
+    description:
+      "Driving architecture decisions, engineering standards, code quality, and iterative delivery.",
+  },
 ];
 
 export const highlights = [
@@ -174,28 +220,28 @@ export const highlights = [
 
 export const techStack = [
   {
-    label: "LANGUAGES",
-    items: ["Node.js", "Typescript", "Python", "Java"],
+    label: "LANGUAGES & RUNTIMES",
+    items: ["TypeScript", "Node.js", "Python", "Java"],
   },
   {
-    label: "INFRASTRUCTURE",
-    items: ["Kubernetes", "AWS / GCP", "Terraform", "Docker"],
+    label: "CLOUD & INFRASTRUCTURE",
+    items: ["AWS / GCP", "Kubernetes", "Docker", "Terraform", "Helm", "GitLab CI/CD"],
   },
   {
-    label: "DATABASE",
+    label: "DATABASES & SEARCH",
     items: ["PostgreSQL", "MongoDB", "Redis", "Qdrant", "Milvus"],
   },
   {
-    label: "MESSAGING",
-    items: ["Apache Kafka", "RabbitMQ", "NATS", "Mosquitto"],
+    label: "MESSAGING & STREAMING",
+    items: ["Apache Kafka", "RabbitMQ", "NATS", "MQTT / Mosquitto"],
   },
   {
-    label: "MONITORING",
-    items: ["Prometheus", "Grafana", "Datadog", "Langfuse"],
+    label: "OBSERVABILITY",
+    items: ["Prometheus", "Grafana", "Datadog", "OpenTelemetry", "Langfuse"],
   },
   {
-    label: "SECURITY",
-    items: ["OAuth2 / OIDC", "mTLS", "HashiCorp Vault"],
+    label: "SECURITY & IDENTITY",
+    items: ["OAuth2 / OIDC", "mTLS", "Keycloak", "Open Policy Agent", "HashiCorp Vault"],
   },
 ];
 
@@ -285,18 +331,220 @@ export const timeline = [
 ];
 
 export const footerLinks = [
+  { label: "Backend Architecture", href: "/backend-architecture" },
+  { label: "AI Engineering", href: "/ai-engineering" },
+  { label: "Projects", href: "/projects" },
+  { label: "Experience", href: "/experience" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/behzad-meghrazchi/" },
   { label: "Source Code", href: "https://github.com/meghrazchi" },
 ];
 
+export const seoPages = [
+  {
+    path: "/projects/rudix",
+    metadataTitle: "Rudix - RAG Document Q&A: Architecture, Stack & Security",
+    metaDescription:
+      "Rudix is a production-oriented RAG document Q&A system by Behzad Meghrazchi. FastAPI, Next.js, Qdrant, and Celery: ingestion, retrieval, citations, security, and evaluation.",
+    heading: "Rudix - RAG Document Q&A Assistant",
+    intro:
+      "Rudix turns uploaded PDF, TXT, and DOCX files into searchable knowledge and returns source-grounded answers with citations, confidence signals, and usage metrics. It is built as production software - clear boundaries between ingestion, retrieval, generation, and operations.",
+    sections: [
+      {
+        heading: "Architecture",
+        body: "Upload → chunking → embeddings → Qdrant vector search → context assembly → LLM generation. Async ingestion and indexing run via Celery workers so the API stays responsive under document bursts; a Next.js frontend handles workspace-scoped search and citation display.",
+        bullets: [
+          "FastAPI API + Celery workers for ingestion, chunking, and indexing",
+          "Qdrant for vector storage and similarity search over document chunks",
+          "Next.js workspace handling document libraries and Q&A sessions",
+        ],
+      },
+      {
+        heading: "Stack & design decisions",
+        body: "Typed API boundaries, chunk-size and overlap tuned for retrieval quality, and explicit citation contracts so answers trace back to sources. The stack favors operable choices over novelty - FastAPI, Celery, and Qdrant compose into a predictable deployment.",
+        bullets: [
+          "Chunking and embedding strategy optimized for citation fidelity",
+          "Deterministic retrieval before generation to ground answers",
+          "Repository: github.com/meghrazchi/rudix",
+        ],
+      },
+      {
+        heading: "Security model",
+        body: "Document access is workspace-scoped; retrieval respects those boundaries before context reaches the model. Operational concerns - secrets management, input handling, and error surfacing - are treated as first-class design inputs.",
+        bullets: [
+          "Workspace isolation for documents and search scope",
+          "Clear separation of retrieval, generation, and user-facing surfaces",
+        ],
+      },
+      {
+        heading: "Evaluation & results",
+        body: "Answers expose citations and confidence signals so users can verify outputs. Usage metrics and observability hooks make retrieval and generation latency, failure modes, and quality measurable in operation.",
+        bullets: [
+          "Source-grounded responses with citations and confidence",
+          "Usage metrics and observability for retrieval and generation paths",
+        ],
+      },
+    ],
+  },
+  {
+    path: "/backend-architecture",
+    metadataTitle: "Backend Architecture & Distributed Systems",
+    metaDescription:
+      "Senior Backend Engineer & Tech Lead focused on microservices, event-driven design, API performance, and resilient cloud-native backend architecture.",
+    heading: "Backend Architecture & Distributed Systems",
+    intro:
+      "I design backend platforms that stay observable, secure, and predictable under real production load. My work spans modular service boundaries, high-throughput APIs, asynchronous workflows, and cloud-native deployment patterns that teams can operate confidently.",
+    sections: [
+      {
+        heading: "Microservices & service boundaries",
+        body: "I break apart legacy monoliths and shape services around clear domain boundaries, stable contracts, and backward-compatible API evolution. That includes versioning strategy, idempotent integrations, and patterns that limit cascading failure across teams and releases.",
+        bullets: [
+          "Modular decomposition of monoliths into maintainable services",
+          "REST and event-driven interfaces with explicit ownership",
+          "Performance tuning across databases, caches, and query paths",
+        ],
+      },
+      {
+        heading: "Event-driven & asynchronous processing",
+        body: "Distributed systems need durable messaging, retries, and dead-letter handling. I implement Kafka, RabbitMQ, and similar pipelines for workloads that must survive spikes, partial outages, and long-running business processes.",
+        bullets: [
+          "Reliable message processing with observability and backpressure",
+          "Integration design for third-party and internal platform APIs",
+          "Fault-tolerant workflows in healthcare, telecom, and platform products",
+        ],
+      },
+      {
+        heading: "Cloud-native operations",
+        body: "Architecture only matters if it runs well in production. I work with Kubernetes, IaC, and standardized deployment pipelines so teams ship frequently without sacrificing reliability, security, or cost control.",
+        bullets: [
+          "Kubernetes scaling, Helm standardization, and runtime tuning",
+          "Infrastructure as Code on AWS (including multi-account setups)",
+          "OAuth2, policy enforcement, and centralized authorization (OPA)",
+        ],
+      },
+    ],
+  },
+  {
+    path: "/ai-engineering",
+    metadataTitle: "AI Engineering, RAG & Agentic Systems",
+    metaDescription:
+      "Production AI engineering: LLM integration, retrieval-augmented generation (RAG), agentic workflows, MCP, and maintainable AI applications.",
+    heading: "AI Engineering, RAG & Agentic Systems",
+    intro:
+      "I integrate AI into products where it measurably helps users-not as a demo layer, but as production software with latency budgets, failure modes, and maintainable boundaries between models, data, and application code.",
+    sections: [
+      {
+        heading: "LLM integration in production",
+        body: "Production AI requires more than prompt calls. I design API boundaries, caching, fallbacks, and evaluation loops so LLM features remain usable when models, vendors, or traffic patterns change.",
+        bullets: [
+          "End-to-end delivery from concept through production release",
+          "Latency optimization and reliability for AI-backed user flows",
+          "Prompt engineering tied to measurable quality outcomes",
+        ],
+      },
+      {
+        heading: "RAG & knowledge systems",
+        body: "Retrieval-augmented generation works when ingestion, chunking, embeddings, and citation UX are engineered deliberately. I have built document Q&A systems that ground answers in uploaded sources with confidence and traceability.",
+        bullets: [
+          "Document ingestion (PDF, TXT, DOCX) and vector search (e.g. Qdrant)",
+          "Source-grounded answers with citations and usage metrics",
+          "FastAPI, Celery, and Next.js full-stack RAG applications",
+        ],
+      },
+      {
+        heading: "Agentic workflows & MCP",
+        body: "Agentic patterns and Model Context Protocol (MCP) tooling are useful when scoped to clear tasks with guardrails. I evaluate where autonomous steps add value versus where deterministic backend logic should remain in control.",
+        bullets: [
+          "AI agents integrated into secure, maintainable application stacks",
+          "MCP-based workflows where tool access must be explicit and auditable",
+          "OpenAI and embedding pipelines in financial and learning products",
+        ],
+      },
+    ],
+  },
+  {
+    path: "/projects",
+    metadataTitle: "Projects & Technical Case Studies",
+    metaDescription:
+      "Open-source and product engineering projects: RAG document assistants, financial platforms, learning apps, and full-stack systems by Behzad Meghrazchi.",
+    heading: "Projects & Technical Case Studies",
+    intro:
+      "Selected repositories and products that reflect how I work: typed backends, clear architecture, production deployment, and-where it fits-AI that is grounded in real data and operable in production.",
+    sections: [
+      {
+        heading: "Rudix - RAG document Q&A",
+        body: "Full-stack AI assistant that turns uploaded documents into searchable knowledge and returns answers with citations, confidence signals, and usage metrics. Stack highlights: FastAPI, Next.js, Qdrant, Celery.",
+        bullets: [
+          "Retrieval-augmented generation with source-grounded responses",
+          "Production-oriented async processing and observability hooks",
+          "Case study: /projects/rudix · Repository: github.com/meghrazchi/rudix",
+        ],
+      },
+      {
+        heading: "BillPilot - financial operations platform",
+        body: "Workspace-first platform for accounts, transactions, budgets, recurring activity, receipts, and reporting-with OpenAI-powered features integrated into a Spring Boot and Kotlin backend.",
+        bullets: [
+          "Multi-module backend with PostgreSQL and structured domain APIs",
+          "AI features embedded in operational workflows, not bolted on",
+        ],
+      },
+      {
+        heading: "Word Ladder & Bike Case Tracker",
+        body: "Word Ladder combines vocabulary learning, pgvector semantic search, and AI conversation practice with PWA and CI-ready deployment. Bike Case Tracker uses a Next.js BFF, JWT auth, Prisma/Postgres, and Redis caching over external APIs.",
+        bullets: [
+          "End-to-end ownership: API design, data layer, and deployment",
+          "Patterns reusable across client projects and platform work",
+        ],
+      },
+    ],
+  },
+  {
+    path: "/experience",
+    metadataTitle: "Experience & Engineering Leadership",
+    metaDescription:
+      "Professional experience as Senior Backend Engineer & Tech Lead: healthcare, energy, fintech-adjacent platforms, telecom scale, and technical leadership.",
+    heading: "Experience & Engineering Leadership",
+    intro:
+      "Across Arculus, E.ON Digital Technology, ONCARE, Rahyab Telecom, and earlier roles, I have combined hands-on backend delivery with architecture decisions, team leadership, and measurable outcomes-latency reduction, multi-account cloud provisioning, and platforms serving millions of users.",
+    sections: [
+      {
+        heading: "Technical leadership",
+        body: "I drive architecture decisions, code quality standards, and iterative delivery. That includes mentoring teams, reviewing critical paths, and aligning engineering work with reliability and security requirements stakeholders expect in regulated or high-scale environments.",
+        bullets: [
+          "Led backend teams and delivery standards in telecom and product companies",
+          "Owned platform decisions: auth, observability, CI/CD, and service migration",
+          "Partnered across teams to reduce MTTR and improve release confidence",
+        ],
+      },
+      {
+        heading: "Recent focus areas",
+        body: "Recent roles emphasize AI-powered product features, Kubernetes scalability, OAuth2 and policy enforcement, API facade infrastructure on AWS, and healthcare backend architecture with strong quality and compliance awareness.",
+        bullets: [
+          "Arculus: LLM/RAG features, 40% latency reduction, OPA authorization",
+          "E.ON: AWS CDK across three accounts, Auth0 multi-tenant integration",
+          "ONCARE: scalable healthcare backends and NestJS/TypeScript migration",
+        ],
+      },
+      {
+        heading: "Scale & impact",
+        body: "Earlier telecom and messaging work included clustered systems and OSS applications supporting on the order of two million users-experience that informs how I design for capacity, monitoring, and long-term maintainability today.",
+        bullets: [
+          "2M+ user operational support systems",
+          "Clustered databases and application servers",
+          "Containerization and automated deployment pipelines",
+        ],
+      },
+    ],
+  },
+];
+
 export const heroContent = {
   title: {
-    lead: "Senior Backend Engineer Architecting",
-    highlight: "Scalable Distributed Systems and AI driven Plarforms",
+    lead: "Senior Backend Engineer & AI Platform Engineer",
+    highlight: "Building Scalable Distributed Systems and AI Platforms",
     suffix: ".",
   },
   description:
-    "Specializing in scalable backend systems, high-performance microservices, and cloud-native architecture, with a focus on building reliable, maintainable solutions for complex technical requirements. Experienced in production AI engineering, including LLM integration, RAG pipelines, Agentic AI, MCP-based workflows, prompt engineering, and AI-powered automation."
+    "I design and build scalable, cloud-native backend platforms and production AI systems, from high-performance APIs and event-driven microservices to LLM integration, retrieval-augmented generation (RAG), and agentic AI. My focus is on distributed systems, secure architecture, MCP-based workflows, and reliable, observable, maintainable software built for real-world scale."
 };
 
 <HeroTitle {...heroContent.title} />
