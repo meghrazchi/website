@@ -24,41 +24,41 @@ function CodeWindow() {
   const { terminalBar } = siteCopy.profile;
 
   return (
-    <article className="flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden rounded-xl border border-slate-800 bg-[#0f141f] shadow-lg ring-1 ring-white/5 dark:border-slate-800/90 lg:min-h-0">
-      <div className="flex items-center justify-between border-b border-slate-800/80 bg-[#0b0f17] px-4 py-3.5">
+    <article className="flex h-full min-h-0 w-full flex-1 flex-col overflow-hidden rounded-xl border border-border bg-surface-lowest shadow-lg ring-1 ring-border/20 lg:min-h-0">
+      <div className="flex items-center justify-between border-b border-border/50 bg-surface/90 backdrop-blur-sm px-4 py-3.5">
         <h2
           id="about-title"
-          className="font-mono text-xs font-medium tracking-tight text-slate-400"
+          className="font-mono text-xs font-medium tracking-tight text-muted-foreground"
         >
-          <span className="text-slate-500">~/profile/</span>
+          <span className="text-muted-foreground/50">~/profile/</span>
           identity.json
         </h2>
         <TerminalDots />
       </div>
-      <div className="custom-scrollbar min-h-0 flex-1 overflow-auto bg-[#0e131d] p-5">
+      <div className="custom-scrollbar min-h-0 flex-1 overflow-auto bg-surface-lowest p-5">
         <pre className="m-0 whitespace-pre-wrap break-words">
           <IdentityJsonView data={profileCode} />
         </pre>
       </div>
-      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-slate-800/80 bg-[#0b0f16] px-4 py-2.5 font-mono text-[11px] text-slate-400 select-none">
+      <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border/50 bg-surface p-4 px-4 font-mono text-[11px] text-muted-foreground select-none">
         <div className="flex flex-wrap items-center gap-2">
           <span className="font-semibold text-emerald-400">❯</span>
-          <span className="text-slate-300">jq</span>
+          <span className="text-muted-foreground">jq</span>
           <span className="text-amber-300">{terminalBar.filter}</span>
-          <span className="text-slate-400">{terminalBar.file}</span>
+          <span className="text-muted-foreground">{terminalBar.file}</span>
           <span
             className="ml-0.5 inline-block h-3.5 w-1.5 animate-pulse bg-primary"
             aria-hidden
           />
         </div>
         <div className="hidden items-center gap-3 sm:flex">
-          <span className="text-slate-400">UTF-8</span>
-          <span className="text-slate-600">•</span>
-          <span className="text-sky-300">JSON</span>
-          <span className="text-slate-600">•</span>
+          <span className="text-muted-foreground">UTF-8</span>
+          <span className="text-muted-foreground/50">•</span>
+          <span className="text-primary">JSON</span>
+          <span className="text-muted-foreground/50">•</span>
           <span className="text-emerald-400">git:(main) ✔</span>
-          <span className="text-slate-600">•</span>
-          <span className="rounded bg-white/10 px-1.5 py-0.5 text-[10px] font-semibold text-slate-200">
+          <span className="text-muted-foreground/50">•</span>
+          <span className="rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary">
             200 OK
           </span>
         </div>
@@ -85,16 +85,16 @@ function PhilosophyPanel() {
 
 function StatusPanel() {
   return (
-    <article className="flex min-h-0 flex-1 flex-col rounded-xl border border-slate-800 bg-[#111723] p-7 shadow-lg ring-1 ring-white/5 dark:border-slate-800/90 lg:p-8">
-      <header className="mb-4 flex items-center justify-between border-b border-slate-800/60 pb-4">
-        <span className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-slate-300">
+    <article className="flex min-h-0 flex-1 flex-col rounded-xl border border-border bg-surface-lowest p-7 shadow-lg ring-1 ring-border/20 lg:p-8">
+      <header className="mb-4 flex items-center justify-between border-b border-border/50 pb-4">
+        <span className="flex items-center gap-2 font-mono text-xs font-semibold uppercase tracking-widest text-muted-foreground">
           <span
             className="size-2 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400/50"
             aria-hidden
           />
           {siteCopy.profile.statusTitle}
         </span>
-        <span className="font-mono text-[11px] tracking-widest text-slate-400">
+        <span className="font-mono text-[11px] tracking-widest text-muted-foreground">
           {siteCopy.profile.statusLiveFeedLabel}
         </span>
       </header>
@@ -106,10 +106,10 @@ function StatusPanel() {
               aria-hidden
             />
             <p>
-              <strong className="font-mono font-bold tracking-tight text-slate-100">
+              <strong className="font-mono font-bold tracking-tight text-foreground">
                 {item.label}:
               </strong>
-              <span className="ml-1 font-normal text-slate-400">
+              <span className="ml-1 font-normal text-muted-foreground">
                 {item.description}
               </span>
             </p>
