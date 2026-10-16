@@ -13,6 +13,8 @@ function getPage(segments: string[]) {
   return seoPagesByPath[path as keyof typeof seoPagesByPath];
 }
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return seoPagePaths.map((path) => ({
     segments: path.replace(/^\//, "").split("/"),

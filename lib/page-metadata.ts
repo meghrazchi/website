@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { SeoPage } from "@/lib/seo-pages";
 
 export function createSeoPageMetadata(page: SeoPage): Metadata {
-  const url = page.path;
+  const url = page.path.endsWith("/") ? page.path : `${page.path}/`;
   return {
     title: page.metadataTitle,
     description: page.metaDescription,

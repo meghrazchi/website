@@ -15,7 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     ...seoPagePaths.map((path) => ({
-      url: `${siteConfig.url}${path}`,
+      url: `${siteConfig.url}${path.endsWith("/") ? path : `${path}/`}`,
       lastModified,
       changeFrequency: "monthly" as const,
       priority: 0.8,

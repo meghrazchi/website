@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { navItems, siteConfig, siteCopy } from "@/lib/site";
 import { Container } from "@/components/shared/container";
 import { MobileMenu } from "@/components/layout/mobile-menu";
@@ -7,13 +8,13 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur">
       <Container className="flex items-center justify-between gap-4 py-4">
-        <a
+        <Link
           href="/"
           className="font-mono text-sm font-bold text-primary md:text-base"
           aria-label={`${siteConfig.name} homepage`}
         >
           {siteConfig.systemName}
-        </a>
+        </Link>
 
         <nav
           aria-label={siteCopy.header.navLabel}

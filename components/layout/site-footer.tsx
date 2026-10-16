@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/shared/container";
 import { footerLinks, siteConfig, siteCopy } from "@/lib/site";
 
@@ -19,17 +20,29 @@ export function SiteFooter() {
           >
             {siteCopy.footer.emailLabel}
           </a>
-          {footerLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="font-mono text-xs font-bold uppercase text-muted-foreground underline underline-offset-4 transition-colors hover:text-primary"
-              target={link.href.startsWith("http") ? "_blank" : undefined}
-              rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-            >
-              {link.label}
-            </a>
-          ))}
+          {footerLinks.map((link) => {
+            const isExternal = link.href.startsWith("http");
+            const className =
+              "font-mono text-xs font-bold uppercase text-muted-foreground underline underline-offset-4 transition-colors hover:text-primary";
+            if (isExternal) {
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className={className}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.label}
+                </a>
+              );
+            }
+            return (
+              <Link key={link.label} href={link.href} className={className}>
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       </Container>
     </footer>
