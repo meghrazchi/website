@@ -134,6 +134,17 @@ body {
   border-radius: 3px;
 }
 
+.glow-dot {
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.65);
+}
+
+.subtle-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
