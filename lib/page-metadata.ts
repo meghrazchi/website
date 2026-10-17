@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 export function createSeoPageMetadata(page: SeoPage): Metadata {
   const url = page.path.endsWith("/") ? page.path : `${page.path}/`;
-  const ogImage = siteConfig.ogImage ?? "/behzad-meghrazchi.webp";
+  const ogImage = siteConfig.ogImage ?? "/behzad-meghrazchi.png";
 
   return {
     title: page.metadataTitle,
@@ -22,7 +22,7 @@ export function createSeoPageMetadata(page: SeoPage): Metadata {
       images: [
         {
           url: ogImage,
-          type: "image/webp",
+          type: "image/png",
           width: 1200,
           height: 630,
           alt: `${page.heading} | ${siteConfig.name}`,
@@ -36,6 +36,7 @@ export function createSeoPageMetadata(page: SeoPage): Metadata {
       images: [
         {
           url: ogImage,
+          type: "image/png",
           width: 1200,
           height: 630,
           alt: `${page.heading} | ${siteConfig.name}`,

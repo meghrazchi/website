@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.ogImage ?? "/behzad-meghrazchi.webp",
-        type: "image/webp",
+        url: siteConfig.ogImage ?? "/behzad-meghrazchi.png",
+        type: "image/png",
         alt: `${siteConfig.name} | ${siteConfig.title}`,
       },
     ],
@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: [
       {
-        url: siteConfig.ogImage ?? "/behzad-meghrazchi.webp",
-        type: "image/webp",
+        url: siteConfig.ogImage ?? "/behzad-meghrazchi.png",
+        type: "image/png",
         alt: `${siteConfig.name} | ${siteConfig.title}`,
       },
     ],
