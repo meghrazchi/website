@@ -32,7 +32,14 @@ export function createSeoPageMetadata(page: SeoPage): Metadata {
       card: "summary_large_image",
       title: page.metadataTitle,
       description: page.metaDescription,
-      images: [ogImage],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${page.heading} | ${siteConfig.name}`,
+        },
+      ],
     },
     robots: {
       index: true,
