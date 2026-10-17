@@ -22,7 +22,7 @@ export function SiteHeader() {
         >
           {navItems.map((item) => (
             <a
-              key={item.href}
+              key={item.label}
               href={item.href}
               className="whitespace-nowrap border-b-2 border-transparent py-1 font-mono text-xs font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-primary md:text-sm"
             >

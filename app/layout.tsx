@@ -1,7 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { siteConfig } from "@/lib/site";
 import { ThemeScript } from "@/components/layout/theme-script";
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#101214" },
+    { media: "(prefers-color-scheme: light)", color: "#f7f9fb" },
+  ],
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -32,20 +41,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.image,
+        url: siteConfig.ogImage ?? "/og-image.png",
         width: 1200,
-        height: 1200,
-        alt: `${siteConfig.name} portrait`,
+        height: 630,
+        alt: `${siteConfig.name} | ${siteConfig.title}`,
       },
     ],
     locale: "en_US",
-    type: "profile",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
-    images: [siteConfig.image],
+    images: [siteConfig.ogImage ?? "/og-image.png"],
   },
   robots: {
     index: true,

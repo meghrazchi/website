@@ -6,7 +6,7 @@ export function ProfileSection() {
   return (
     <section
       id="about"
-      className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch"
+      className="grid grid-cols-1 scroll-mt-24 gap-6 lg:grid-cols-12 lg:items-stretch"
       aria-labelledby="about-title"
     >
       <div className="flex min-h-0 flex-col lg:col-span-7 lg:h-full lg:self-stretch">
@@ -42,9 +42,9 @@ function CodeWindow() {
       </div>
       <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border/50 bg-surface p-4 px-4 font-mono text-[11px] text-muted-foreground select-none">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="font-semibold text-emerald-400">❯</span>
+          <span className="font-semibold text-emerald-600 dark:text-emerald-400">❯</span>
           <span className="text-muted-foreground">jq</span>
-          <span className="text-amber-300">{terminalBar.filter}</span>
+          <span className="font-medium text-amber-600 dark:text-amber-300">{terminalBar.filter}</span>
           <span className="text-muted-foreground">{terminalBar.file}</span>
           <span
             className="ml-0.5 inline-block h-3.5 w-1.5 animate-pulse bg-primary"
@@ -56,7 +56,7 @@ function CodeWindow() {
           <span className="text-muted-foreground/50">•</span>
           <span className="text-primary">JSON</span>
           <span className="text-muted-foreground/50">•</span>
-          <span className="text-emerald-400">git:(main) ✔</span>
+          <span className="text-emerald-600 dark:text-emerald-400">git:(main) ✔</span>
           <span className="text-muted-foreground/50">•</span>
           <span className="rounded bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary">
             200 OK

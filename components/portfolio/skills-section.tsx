@@ -4,7 +4,7 @@ export function SkillsSection() {
   return (
     <section
       id="stack"
-      className="rounded-lg border border-border bg-surface-low p-8"
+      className="scroll-mt-24 rounded-lg border border-border bg-surface-low p-8"
       aria-labelledby="stack-title"
     >
       <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">

@@ -21,6 +21,12 @@
   --method-get: #2563eb;
   --method-post: #d97706;
   --metric-positive: #0053db;
+  --json-key: #0284c7;
+  --json-string: #1e293b;
+  --json-value-highlight: #15803d;
+  --json-punct: #64748b;
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: #cbd5e1;
 }
 
 .dark {
@@ -42,6 +48,12 @@
   --method-get: #78a2ff;
   --method-post: #f5a524;
   --metric-positive: #b4c5ff;
+  --json-key: #93c5fd;
+  --json-string: #cbd5e1;
+  --json-value-highlight: #86efac;
+  --json-punct: #64748b;
+  --scrollbar-track: #0d121c;
+  --scrollbar-thumb: #243048;
 }
 
 @theme inline {
@@ -63,10 +75,10 @@
   --color-method-get: var(--method-get);
   --color-method-post: var(--method-post);
   --color-metric-positive: var(--metric-positive);
-  --color-json-key: #93c5fd;
-  --color-json-string: #cbd5e1;
-  --color-json-value-highlight: #86efac;
-  --color-json-punct: #64748b;
+  --color-json-key: var(--json-key);
+  --color-json-string: var(--json-string);
+  --color-json-value-highlight: var(--json-value-highlight);
+  --color-json-punct: var(--json-punct);
   --font-sans: Arial, Helvetica, sans-serif;
   --font-display: Arial, Helvetica, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
@@ -126,11 +138,11 @@ body {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #0d121c;
+  background: var(--scrollbar-track);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #243048;
+  background: var(--scrollbar-thumb);
   border-radius: 3px;
 }
 

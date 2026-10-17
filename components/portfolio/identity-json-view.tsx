@@ -58,7 +58,7 @@ export function IdentityJsonView({ data }: IdentityJsonViewProps) {
   const metrics = data.impact_metrics;
 
   return (
-    <code className="font-mono text-[13px] leading-[1.62] text-slate-300">
+    <code className="font-mono text-[13px] leading-[1.62] text-slate-800 dark:text-slate-300">
       <Punct>{"{"}</Punct>
       {"\n"}
       {"  "}

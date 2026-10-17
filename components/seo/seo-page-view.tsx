@@ -11,23 +11,53 @@ type SeoPageViewProps = {
 
 export function SeoPageView({ page }: SeoPageViewProps) {
   const relatedPages = seoPages.filter((item) => item.path !== page.path);
+  const pageUrl = `${siteConfig.url}${page.path.endsWith("/") ? page.path : `${page.path}/`}`;
+  const ogImageUrl = `${siteConfig.url}${siteConfig.ogImage ?? "/og-image.png"}`;
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: page.heading,
-    description: page.metaDescription,
-    url: `${siteConfig.url}${page.path}`,
-    mainEntityOfPage: `${siteConfig.url}${page.path}`,
-    about: page.heading,
-    author: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
-      sameAs: [
-        "https://www.linkedin.com/in/behzad-meghrazchi/",
-        "https://github.com/meghrazchi",
-      ],
-    },
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: page.heading,
+        description: page.metaDescription,
+        url: pageUrl,
+        mainEntityOfPage: pageUrl,
+        image: [ogImageUrl],
+        about: page.heading,
+        author: {
+          "@type": "Person",
+          name: siteConfig.name,
+          url: siteConfig.url,
+          sameAs: [
+            "https://www.linkedin.com/in/behzad-meghrazchi/",
+            "https://github.com/meghrazchi",
+          ],
+        },
+        publisher: {
+          "@type": "Person",
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: siteConfig.url,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: page.heading,
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
   };
 
   return (

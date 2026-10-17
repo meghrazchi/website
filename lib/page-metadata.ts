@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import type { SeoPage } from "@/lib/seo-pages";
+import { siteConfig } from "@/lib/site";
 
 export function createSeoPageMetadata(page: SeoPage): Metadata {
   const url = page.path.endsWith("/") ? page.path : `${page.path}/`;
+  const ogImage = siteConfig.ogImage ?? "/og-image.png";
+
   return {
     title: page.metadataTitle,
     description: page.metaDescription,
@@ -13,11 +16,23 @@ export function createSeoPageMetadata(page: SeoPage): Metadata {
       title: page.metadataTitle,
       description: page.metaDescription,
       url,
+      siteName: siteConfig.name,
+      locale: "en_US",
       type: "article",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: `${page.heading} | ${siteConfig.name}`,
+        },
+      ],
     },
     twitter: {
+      card: "summary_large_image",
       title: page.metadataTitle,
       description: page.metaDescription,
+      images: [ogImage],
     },
     robots: {
       index: true,

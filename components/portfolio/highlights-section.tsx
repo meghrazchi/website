@@ -3,7 +3,7 @@ import { highlights, siteCopy } from "@/lib/site";
 
 export function HighlightsSection() {
   return (
-    <section id="projects" className="space-y-8" aria-labelledby="projects-title">
+    <section id="projects" className="scroll-mt-24 space-y-8" aria-labelledby="projects-title">
       <h2
         id="projects-title"
         className="font-display text-3xl font-semibold text-foreground"

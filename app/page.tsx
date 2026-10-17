@@ -11,28 +11,42 @@ import { siteConfig, siteCopy } from "@/lib/site";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  name: `${siteConfig.name} Portfolio`,
-  url: siteConfig.url,
-  description: siteConfig.description,
-  mainEntity: {
-    "@type": "Person",
-    name: siteConfig.name,
-    jobTitle: siteConfig.title,
-    url: siteConfig.url,
-    image: `${siteConfig.url}${siteConfig.image}`,
-    email: siteConfig.email,
-    sameAs: [
-      "https://www.linkedin.com/in/behzad-meghrazchi/",
-      "https://github.com/meghrazchi",
-    ],
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: siteCopy.structuredData.addressLocality,
-      addressCountry: siteCopy.structuredData.addressCountry,
+  "@graph": [
+    {
+      "@type": "ProfilePage",
+      name: `${siteConfig.name} Portfolio`,
+      url: `${siteConfig.url}/`,
+      description: siteConfig.description,
+      mainEntity: {
+        "@type": "Person",
+        name: siteConfig.name,
+        jobTitle: siteConfig.title,
+        url: siteConfig.url,
+        image: `${siteConfig.url}${siteConfig.ogImage ?? siteConfig.image}`,
+        email: siteConfig.email,
+        sameAs: [
+          "https://www.linkedin.com/in/behzad-meghrazchi/",
+          "https://github.com/meghrazchi",
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: siteCopy.structuredData.addressLocality,
+          addressCountry: siteCopy.structuredData.addressCountry,
+        },
+        knowsAbout: siteCopy.structuredData.knowsAbout,
+      },
     },
-    knowsAbout: siteCopy.structuredData.knowsAbout,
-  },
+    {
+      "@type": "WebSite",
+      name: `${siteConfig.name} - Technical Portfolio`,
+      url: `${siteConfig.url}/`,
+      description: siteConfig.description,
+      author: {
+        "@type": "Person",
+        name: siteConfig.name,
+      },
+    },
+  ],
 };
 
 export default function Home() {

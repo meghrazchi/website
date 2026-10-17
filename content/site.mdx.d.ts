@@ -14,6 +14,7 @@ declare module "@/content/site.mdx" {
     readonly description: string;
     readonly email: string;
     readonly image: string;
+    readonly ogImage?: string;
   };
 
   export const siteCopy: {

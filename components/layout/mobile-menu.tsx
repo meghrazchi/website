@@ -119,7 +119,7 @@ export function MobileMenu({
             <nav className="mt-8 flex flex-col gap-4">
               {links.map((item) => (
                 <a
-                  key={item.href}
+                  key={item.label}
                   href={item.href}
                   className="border-b border-border pb-3 font-mono text-sm font-semibold text-muted-foreground transition-colors hover:border-primary hover:text-primary"
                   onClick={() => setIsOpen(false)}

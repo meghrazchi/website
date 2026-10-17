@@ -62,14 +62,14 @@ export function HeroSection() {
               </span>
               <TerminalDots />
             </div>
-            <dl className="space-y-1 font-mono text-xs leading-5 text-muted-foreground">
+            <dl className="space-y-1 font-mono text-xs leading-5">
               {identityRows.map((row) => (
                 <div
                   key={row.key}
                   className="grid grid-cols-[max-content_minmax(0,1fr)] gap-2"
                 >
-                  <dt className="whitespace-nowrap">&gt; {row.key}:</dt>
-                  <dd className="min-w-0 break-words">
+                  <dt className="whitespace-nowrap font-medium text-primary">&gt; {row.key}:</dt>
+                  <dd className="min-w-0 break-words text-foreground">
                     {JSON.stringify(row.value)}
                   </dd>
                 </div>

@@ -5,7 +5,7 @@ export function TimelineSection() {
   return (
     <section
       id="experience"
-      className="mx-auto max-w-3xl space-y-12"
+      className="mx-auto max-w-3xl scroll-mt-24 space-y-12"
       aria-labelledby="experience-title"
     >
       <h2

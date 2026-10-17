@@ -66,36 +66,36 @@ export function SiteFooter() {
   return (
     <footer
       id="contact"
-      className="mt-20 w-full border-t border-border bg-surface"
+      className="mt-20 w-full scroll-mt-24 border-t border-border bg-surface"
     >
       {/* Top decorative accent line */}
       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-      <div className="mx-auto max-w-7xl px-4 pt-16 pb-12 sm:px-6">
+      <div className="mx-auto max-w-7xl px-4 pt-12 pb-12 sm:px-6 sm:pt-16">
         {/* Top CTA / Availability Banner */}
-        <div className="relative mb-14 overflow-hidden rounded-xl border border-border bg-surface-lowest p-8 shadow-sm">
+        <div className="relative mb-12 overflow-hidden rounded-xl border border-border bg-surface-lowest p-6 shadow-sm sm:mb-14 sm:p-8">
           <div className="relative z-10 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
-            <div className="space-y-2">
-              <div className="flex items-center gap-3">
-                <span className="relative flex size-2.5">
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center gap-2.5">
+                <span className="relative flex size-2.5 shrink-0">
                   <span className="inline-flex size-2.5 rounded-full bg-primary" />
                 </span>
                 <span className="font-mono text-xs font-semibold tracking-wider text-muted-foreground uppercase">
                   status: &quot;Open for Innovation &amp; Strategic Collaboration&quot;
                 </span>
               </div>
-              <h2 className="text-2xl font-bold tracking-tight text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground sm:text-2xl">
                 Ready to build or scale your distributed backend &amp; AI platform?
               </h2>
-              <p className="max-w-2xl text-sm text-muted-foreground">
+              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
                 Available for Senior/Lead architectural consulting, high-throughput distributed
                 microservices, and enterprise LLM/RAG platform engineering.
               </p>
             </div>
 
-            <div className="relative z-10 flex flex-wrap items-center gap-3">
+            <div className="relative z-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:items-center">
               <a
-                className="inline-flex min-h-11 items-center justify-center rounded bg-primary px-6 py-2.5 font-mono text-sm font-bold text-primary-foreground shadow-sm transition-opacity hover:opacity-90"
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded bg-primary px-6 py-2.5 font-mono text-sm font-bold text-primary-foreground shadow-sm transition-opacity hover:opacity-90 sm:w-auto"
                 href={`mailto:${siteConfig.email}`}
               >
                 <svg
@@ -114,45 +114,68 @@ export function SiteFooter() {
                 </svg>
                 <span>POST /contact</span>
               </a>
+              <Link
+                className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded border border-border bg-surface-lowest px-5 py-2.5 font-mono text-sm font-semibold text-foreground shadow-sm transition-colors hover:border-primary hover:bg-surface-high sm:w-auto"
+                href="/#experience"
+              >
+                <svg
+                  className="size-4 text-muted-foreground"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span>GET /resume.pdf</span>
+              </Link>
             </div>
           </div>
         </div>
 
-
         {/* Responsive Footer Bar */}
-        <div className="pt-8 border-t border-border font-mono text-xs text-muted-foreground">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between gap-4">
-            {/* Left: Signature */}
-            <div className="flex shrink-0 items-center gap-2.5 whitespace-nowrap">
-              <span className="text-muted-foreground font-medium tracking-wide text-xs">
+        <div className="border-t border-border pt-8 font-mono text-xs text-muted-foreground">
+          <div className="flex flex-col items-center justify-between gap-6 lg:flex-row">
+            {/* Signature: Order 3 on mobile/tablet, Order 1 on desktop */}
+            <div className="order-3 flex items-center justify-center text-center text-xs text-muted-foreground lg:order-1 lg:justify-start lg:text-left">
+              <span className="whitespace-normal sm:whitespace-nowrap">
                 © 2026{" "}
-                <span className="text-primary font-semibold">TERMINAL_ENGINEER</span>{" "}
-                <span className="text-foreground font-semibold">{siteConfig.name}</span>
+                <span className="font-semibold text-primary">TERMINAL_ENGINEER</span>
+                {" // "}
+                <span className="font-semibold text-foreground">{siteConfig.name}</span>
               </span>
             </div>
 
+            {/* Navigation links: Order 1 on mobile/tablet, Order 2 on desktop */}
             <nav
               aria-label="Footer navigation"
-              className="mt-2 flex flex-wrap items-center justify-center gap-3 text-[11px] tracking-wider px-2 sm:mt-0 sm:whitespace-nowrap"
+              className="order-1 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-[11px] tracking-wider uppercase lg:order-2"
             >
               {navLinks.map((link, i) => (
                 <Fragment key={link.label}>
-                  <a
+                  <Link
                     key={link.label}
                     href={link.href}
-                    className="whitespace-nowrap border-b border-transparent pb-1 transition-colors hover:border-primary hover:text-primary uppercase"
+                    className="whitespace-nowrap border-b border-transparent pb-0.5 transition-colors hover:border-primary hover:text-primary"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                   {i < navLinks.length - 1 && (
-                    <span className="text-border/40">·</span>
+                    <span className="text-border/60" aria-hidden="true">
+                      /
+                    </span>
                   )}
                 </Fragment>
               ))}
             </nav>
 
-            {/* Right: Contact Chips */}
-            <div className="mt-2 flex flex-wrap items-center gap-2 sm:mt-0 sm:whitespace-nowrap">
+            {/* Contact chips: Order 2 on mobile/tablet, Order 3 on desktop */}
+            <div className="order-2 flex flex-wrap items-center justify-center gap-2 lg:order-3 lg:justify-end">
               {contactLinks.map((link) => (
                 <Fragment key={link.label}>
                   <a
@@ -161,7 +184,7 @@ export function SiteFooter() {
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     aria-label={link.label}
-                    className="group inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-lowest px-2.5 py-1 font-mono text-[11px] text-muted-foreground shadow-sm transition-colors hover:border-primary hover:text-primary hover:bg-surface-high"
+                    className="group inline-flex items-center gap-1.5 rounded-md border border-border bg-surface-lowest px-2.5 py-1 font-mono text-[11px] text-muted-foreground shadow-sm transition-colors hover:border-primary hover:bg-surface-high hover:text-primary"
                   >
                     {link.icon}
                     <span>{link.label}</span>
