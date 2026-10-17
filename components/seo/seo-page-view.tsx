@@ -12,7 +12,7 @@ type SeoPageViewProps = {
 export function SeoPageView({ page }: SeoPageViewProps) {
   const relatedPages = seoPages.filter((item) => item.path !== page.path);
   const pageUrl = `${siteConfig.url}${page.path.endsWith("/") ? page.path : `${page.path}/`}`;
-  const ogImageUrl = `${siteConfig.url}${siteConfig.ogImage ?? "/behzad-meghrazchi.png"}`;
+  const ogImageUrl = `${siteConfig.url}${siteConfig.ogImage ?? "/behzad-meghrazchi-og.webp"}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
