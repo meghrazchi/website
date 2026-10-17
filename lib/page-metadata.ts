@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site";
 
 export function createSeoPageMetadata(page: SeoPage): Metadata {
   const url = page.path.endsWith("/") ? page.path : `${page.path}/`;
-  const ogImage = siteConfig.ogImage ?? "/og-image.png";
+  const ogImage = siteConfig.ogImage ?? "/behzad-meghrazchi.webp";
 
   return {
     title: page.metadataTitle,

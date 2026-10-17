@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.ogImage ?? "/og-image.png",
+        url: siteConfig.ogImage ?? "/behzad-meghrazchi.webp",
         width: 1200,
         height: 630,
         alt: `${siteConfig.name} | ${siteConfig.title}`,
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
-    images: [siteConfig.ogImage ?? "/og-image.png"],
+    images: [siteConfig.ogImage ?? "/behzad-meghrazchi.webp"],
   },
   robots: {
     index: true,
