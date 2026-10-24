@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: siteConfig.ogImage ?? "/behzad-meghrazchi.png",
+        url: siteConfig.ogImage ?? "/behzad-meghrazchi-social-square.png",
         type: "image/png",
-        width: 1200,
+        width: 630,
         height: 630,
         alt: `${siteConfig.name} | ${siteConfig.title}`,
       },
@@ -52,14 +52,14 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
     images: [
       {
-        url: siteConfig.ogImage ?? "/behzad-meghrazchi.png",
+        url: siteConfig.ogImage ?? "/behzad-meghrazchi-social-square.png",
         type: "image/png",
-        width: 1200,
+        width: 630,
         height: 630,
         alt: `${siteConfig.name} | ${siteConfig.title}`,
       },
